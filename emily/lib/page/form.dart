@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:emily/main.dart';
+import 'package:emily/page/to_do_page.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -24,6 +25,7 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: const Text('Form'),
       ),
       // Menambahkan drawer menu
@@ -35,9 +37,9 @@ class _MyFormPageState extends State<MyFormPage> {
               title: const Text('Counter'),
               onTap: () {
                 // Route menu ke halaman utama
-                Navigator.pushReplacement(
+                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
+                  MaterialPageRoute(builder: (context) => const MyApp()),
                 );
               },
             ),
@@ -48,6 +50,16 @@ class _MyFormPageState extends State<MyFormPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
